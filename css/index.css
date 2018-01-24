@@ -1,115 +1,247 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+  color: #777;
+  line-height: 1.6;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+.header {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 768px;
+  margin: 0 auto;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+      padding-right: 1em;
+      padding-left: 1em;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  letter-spacing: 0.05em;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+.header h1 {
+  font-size: 200%;
+  font-weight: 100;
+  margin: 0;
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+.header h2 {
+  font-size: 125%;
+  font-weight: 100;
+  line-height: 1.5;
+  margin: 0;
+  color: #666;
+  letter-spacing: -0.02em;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+#lnkNav {
+  color: #333;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+/*ul.topnav li a:hover {background-color: #111;}*/
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+
+/*Generales*/
+.active 
+{ 
+  background-color: #3b8bba !important;
+  color: #fff !important; 
 }
+
+.hidden
+{
+  display: none;
+}
+
+.divForm 
+{
+  clear: left;
+  margin-bottom: 3px;
+}
+
+/*Loading*/
+.loading {
+    width: 102px;
+    height: 102px;
+    background-image: url(../img/sprite-loading.png);
+    
+    -webkit-animation: play .6s steps(8) infinite;
+       -moz-animation: play .6s steps(4) infinite;
+        -ms-animation: play .6s steps(4) infinite;
+         -o-animation: play .6s steps(4) infinite;
+            animation: play .6s steps(4) infinite;
+}
+
+@-webkit-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -816px; }
+}
+
+@-moz-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -816px; }
+}
+
+@-ms-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -816px; }
+}
+
+@-o-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -816px; }
+}
+
+@keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -816px; }
+}
+
+@media (max-width: 1000px) {
+.center-inner{left:25%;top:25%;position:absolute;width:50%;height:300px;text-align:center;max-width:500px;max-height:500px;}
+}
+@media (min-width: 1000px) {
+.center{left:50%;top:25%;position:absolute;}
+.center-inner{width:500px;height:100%;margin-left:-250px;height:300px;text-align:center;max-width:500px;max-height:500px;}}
+
+/*Operation*/
+.selected
+{
+  color: #3b8bba;
+}
+
+legend
+{
+  color: #3b8bba!important;
+}
+
+textarea
+{
+  width: 97%;
+}
+
+/*Evidencias fotograficas*/
+.l-box 
+{
+  padding: 1em;
+}
+
+/*#evidencias ul
+{
+  list-style-type: none;
+}
+#evidencias ul li
+{
+  padding: 1%;
+  float: left;
+}
+div.photo
+{
+  width: 100px;
+  height: 100px;
+  background-size: 100% 100%;
+}*/
+
+.navigator {
+  background: rgb(250, 250, 250);
+  margin: 0 auto;
+  margin-right: 1em;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  padding: .5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  text-align: center;
+}
+
+.navigator a {
+  text-align: center;
+  padding: 12px 3em;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px; 
+  color: #333;
+}
+
+#div_pasos div {
+  border-bottom: 1px solid #eee; 
+}
+
+.spnPaso {
+  vertical-align: middle;
+}
+
+/**input mask**/
+:invalid {
+  outline: 1px solid rgb(138, 51, 51); }
+
+.shell {
+  position: relative;
+  line-height: 1; }
+  .shell span {
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    color: #ccc;
+    pointer-events: none;
+    z-index: -1; }
+    .shell span i {
+      font-style: normal;
+      /* any of these 3 will work */
+      color: transparent;
+      opacity: 0;
+      visibility: hidden; }
+
+input.masked,
+.shell span {
+  font-size: 16px;
+  font-family: monospace;
+  padding-right: 10px;
+  background-color: transparent;
+text-transform: uppercase; }

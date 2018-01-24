@@ -16,6 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+//var lstTarima = [];
+//var urlHandler = 'https://servidor.casc.com.mx/';
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -27,23 +31,51 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("backbutton", onBackKeyDown, false);
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        
+        // pictureSource=navigator.camera.PictureSourceType;
+        // destinationType=navigator.camera.DestinationType; 
         app.receivedEvent('deviceready');
+        FastClick.attach(document.body);
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        try {
+            oIndexCtrl = new IndexController();
+            oAppController = new AppController();
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+            // Verifica la existencia de datos del usuario            
+            if(localStorage.getItem('usrdata')) {
+                usrdata = localStorage.getItem('usrdata');
+                oAppController.Create('inicio');
+            }
+            else {
+                oAppController.Create('config');
+            }
+        } catch (error) {
+            alert(error.message);
+        }
     }
 };
+
+function onBackKeyDown() {
+    Common.notificationConfirm("Confirma que desea salir de la app", "Exit", ['Cancelar','Salir'], salir);
+}
+
+function salir(btnIdx) {
+    switch (btnIdx) {
+        case 2:
+            navigator.app.exitApp();    
+            break;
+    
+        default:
+            break;
+    }
+}
