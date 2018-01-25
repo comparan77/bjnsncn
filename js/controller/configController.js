@@ -34,8 +34,26 @@ var ConfigController = function() {
         var btn_valida_cp = document.getElementById('btn_valida_cp');
         btn_valida_cp.addEventListener('click', function() {
             var txt_cp = document.getElementById('txt_cp');
+            var lbl_estado = document.getElementById('lbl_estado');
+            var lbl_municipio = document.getElementById('lbl_municipio');
+            var ddl_colonia = document.getElementById('ddl_colonia');
+
+            lbl_estado.innerHTML = '';
+            lbl_municipio.innerHTML = '';
+            ddl_colonia.innerHTML = '';
+
             CatalogosModel.valida_cp(txt_cp.value, function(data){
-                console.log(data.colonias[0]);
+                lbl_estado.innerHTML = data.estado;
+                lbl_municipio.innerHTML = data.municipio;
+                var arrCol = [];
+                for(var i = 0; i < data.colonias.length; i++) {
+                    var col = {
+                        datatext: data.colonias[i],
+                        datavalue: data.colonias[i]
+                    }
+                    arrCol.push(col);
+                }
+                Common.fillSelect('ddl_colonia', arrCol);
             });
         });
     }
