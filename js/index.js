@@ -52,13 +52,14 @@ var app = {
             oAppController = new AppController();
 
             // Verifica la existencia de datos del usuario            
-            if(localStorage.getItem('usrdata')) {
-                usrdata = localStorage.getItem('usrdata');
-                oAppController.Create('inicio');
+            usrdata = localStorage.getItem('usrdata');
+            if(usrdata) {
+                menuAct = 'inicio'
             }
             else {
-                oAppController.Create('config');
+                menuAct = 'config'
             }
+            oIndexCtrl.InitMenu();
         } catch (error) {
             alert(error.message);
         }

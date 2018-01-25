@@ -5,37 +5,35 @@
     </div>
 
     <p>Por favor, ay&uacute;danos a registrar tu informaci&oacute;n 
-        la cu&acute;l nos permitir&acute; darte un mejor servicio.
+        la cu&aacute;l nos permitir&aacute; darte un mejor servicio.
     </p>
     
     <p>Presiona el bot&oacute;n siguiente para comenzar el registro</p>
 
-    <p>Para consulta de nuestro aviso de privacidad puedes consultarlo en
-        <a href="#">www.bajonsincarne.mx/avisoprivacida</a>
-    </p>
+    
 </div>
 
 <div id="step_2" class="hidden pure-form pure-form-aligned">
-        
     <div class="header">
         <h1>Registro</h1>
         <h2>Registro de tus datos personales</h2>
     </div>
     
     <div>
-        <input id="nombre" placeholder="Nombre(s)">
+        <input id="txt_nombre" placeholder="Nombre(s)">
     </div>
 
     <div>
-        <input id="paterno" placeholder="Nombre(s)">
+        <input id="txt_paterno" placeholder="Apellido Paterno">
     </div>
 
     <div>
-        <input id="materno" placeholder="Nombre(s)">
+        <input id="txt_materno" placeholder="Apellido Materno">
     </div>
 
     <div>
-        <input id="cumpleanio" placeholder="Cumpleaños dia/mes" type="date">
+        <label for="cumpleanio">Cumplea&ntilde;os</label>
+        <input id="txt_cumpleanio" placeholder="Cumpleaños dia/mes" type="date">
     </div>
 
 </div>
@@ -48,32 +46,16 @@
     </div>
     
     <div>
-        <input id="cp" placeholder="Código postal">
+        <input id="txt_cp" placeholder="Código postal" type="number">
         <div class="pure-control-group">
-            <button id="btn_save_maquila" class="pure-button ">
+            <button id="btn_valida_cp" class="pure-button ">
                 &nbsp;Validar c&oacute;digo postal
             </button>
         </div>
     </div>
 
     <div>
-        <input type="text" placeholder="Calle y número, apartado postal, c/d">
-    </div>
-
-    <div>
-        <input id="paterno" placeholder="Nombre(s)">
-    </div>
-
-    <div>
-        <input id="materno" placeholder="Nombre(s)">
-    </div>
-
-    <div>
-        <input id="cumpleanio" placeholder="Cumpleaños dia/mes" type="date">
+        <input type="text" placeholder="Calle y número">
     </div>
 
 </div>
-
-<footer>
-    <div id="wizard_2"></div>
-</footer>

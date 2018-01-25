@@ -29,7 +29,6 @@
     Wizard.prototype.open = function() {
         // open code goes here
         buildOut.call(this);
-
         initializeEvents.call(this);
     }
 
@@ -84,7 +83,11 @@
     function buildOut() {
         this.stepNum = 1;
         this.arrStepValid = [];
-        var content = document.getElementById(this.options.content);
+        var footer = document.getElementById('footer_page');
+        var content = document.createElement('div');
+        content.setAttribute('id', this.options.content);
+        footer.appendChild(content);
+        //var content = document.getElementById(this.options.content);
         content.className = 'navigator';
         
         this.lnkAnt = document.createElement('a');
