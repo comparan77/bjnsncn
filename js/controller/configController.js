@@ -24,10 +24,34 @@ var ConfigController = function() {
 
     function reg_datos_per() {
         var txt_nombre = document.getElementById('txt_nombre');
-        txt_nombre.addEventListener('blur', function() {
-            wzrd_config.setStepValid(2);
-            wzrd_config.enabledBtnNext();
-        });
+        var txt_paterno = document.getElementById('txt_paterno');
+        var txt_validate;
+        var arrTxt = ['txt_nombre', 'txt_paterno', 'txt_materno']
+        var arrTxtForValidate = [];
+        for (var i = 0; i < arrTxt.length; i++) {
+            txt_validate = document.getElementById(arrTxt[i]);
+            var txtForVaidate = {
+                id: arrTxt[i],
+                valid: false    
+            }
+            arrTxtForValidate.push(txtForVaidate);
+            txt_validate.addEventListener('blur', function() {
+                var id = this.getAttribute('id');
+                var objTxt = arrTxtForValidate.filter(function (obj) {
+                    return obj.id == id;
+                });
+                objTxt.valid = this.length > 3
+                var isValidNextStep = arrTxtForValidate.fillter(function (obj) {
+                    return obj.valid == true;
+                }).length == arrTxtForValidate.length;
+                if(isValidNextStep)
+                    console.log('valido');
+            });
+        }
+        // txt_nombre.addEventListener('blur', function() {
+        //     wzrd_config.setStepValid(2);
+        //     wzrd_config.enabledBtnNext();
+        // });
     }
 
     function btn_valida_cp_click() {
