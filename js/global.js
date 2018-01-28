@@ -7,3 +7,4 @@ var oAppController;
 var menuAct = 'inicio';
 
 var oIndexCtrl;
+var slideout;

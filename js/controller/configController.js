@@ -12,8 +12,8 @@ var ConfigController = function() {
         wzrd_config.open();
         wzrd_config.setStepValid(1);
         wzrd_config.enabledBtnNext();
-
-        reg_datos_per();
+        
+        reg_datos_per();    
 
         btn_valida_cp_click();
     }
@@ -40,12 +40,16 @@ var ConfigController = function() {
                 var objTxt = arrTxtForValidate.filter(function (obj) {
                     return obj.id == id;
                 });
-                objTxt.valid = this.length > 3
-                var isValidNextStep = arrTxtForValidate.fillter(function (obj) {
+                objTxt[0].valid = this.value.length > 3;
+
+                var isValidNextStep = arrTxtForValidate.filter(function (obj) {
                     return obj.valid == true;
-                }).length == arrTxtForValidate.length;
+                }).length == arrTxtForValidate.length;    
+                
                 if(isValidNextStep)
                     console.log('valido');
+                else
+                    console.log('invalido');
             });
         }
         // txt_nombre.addEventListener('blur', function() {
