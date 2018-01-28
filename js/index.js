@@ -60,6 +60,8 @@ var app = {
                 slideout.toggle();
               });
 
+              console.log(document.getElementById('spn_hola').parentNode.parentNode.innerHTML);
+
             oIndexCtrl = new IndexController();
             oAppController = new AppController();
 

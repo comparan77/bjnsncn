@@ -15,8 +15,9 @@ body {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 768px;
   margin: 0 auto;
-  margin-right: 1em;
+  
   margin-bottom: 1em;
+  
   padding: 1em;
       padding-right: 1em;
       padding-left: 1em;
@@ -41,57 +42,8 @@ body {
   letter-spacing: -0.02em;
 }
 
-ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
 #lnkNav {
   color: #333;
-}
-
-ul.topnav li {float: left;}
-
-ul.topnav li a {
-  display: inline-block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 12px 14px;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/*ul.topnav li a:hover {background-color: #111;}*/
-
-ul.topnav li.icon {display: none;}
-
-@media screen and (max-width:680px) {
-  ul.topnav li:not(:first-child) {display: none;}
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block;
-  }
-}
-
-@media screen and (max-width:680px) {
-  ul.topnav.responsive {position: relative;}
-  ul.topnav.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  ul.topnav.responsive li {
-    float: none;
-    display: inline;
-  }
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
-  }
 }
 
 /*Generales*/
