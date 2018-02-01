@@ -5,7 +5,7 @@ $JSView.controller = {
             'title': 'Welcome'
         },e)
     },
-    viewMenuB: function(e){
+    viewMenuAccount: function(e){
         $JSView.dataView({
             'title': 'Templates'
         },e)

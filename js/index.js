@@ -42,7 +42,7 @@ var app = {
         // pictureSource=navigator.camera.PictureSourceType;
         // destinationType=navigator.camera.DestinationType; 
         app.receivedEvent('deviceready');
-        FastClick.attach(document.body);
+        //FastClick.attach(document.body);
         
     },
     // Update DOM on a Received Event
@@ -63,7 +63,7 @@ var app = {
             // // oIndexCtrl.InitMenu();
 
             
-    $JSView.run('bottom');
+    $JSView.run('left');
    
     $JSView.declareMenu({
         /*
@@ -75,7 +75,7 @@ var app = {
         */
         menu: {
             url: '/menu',
-            template: 'views/menuBottom.html',
+            template: 'views/menuLeft.html',
             controller: 'menu'
         },
         
@@ -84,10 +84,10 @@ var app = {
             template: 'views/viewMenuA.html',
             controller: 'viewMenuA'
         },
-        viewMenuB: {
-            url: '/viewMenuB',
-            template: 'views/viewMenuB.html',
-            controller: 'viewMenuB'
+        viewMenuAccount: {
+            url: '/viewMenuAccount',
+            template: 'views/viewMenuAccount.html',
+            controller: 'viewMenuAccount'
         },
         viewMenuC: {
             url: '/viewMenuC',

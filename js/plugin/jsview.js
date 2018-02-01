@@ -50,7 +50,7 @@ $JSView = {
         objBody = $v.select('body');
         //Add full spinner div in dom
         
-        console.log(spinnerModal);
+        console.log('spinnerModal:' + spinnerModal);
         
         objBody.innerHTML += spinnerModal;
         //Save the reference full spinner div in global var
