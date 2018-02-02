@@ -222,8 +222,7 @@ var app = {
         }
     });
     
-    $JSView
-.initView('viewMenuA');
+    $JSView.initView('viewMenuA');
 
         } catch (error) {
             alert(error.message);

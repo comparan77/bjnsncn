@@ -7,7 +7,7 @@ $JSView.controller = {
     },
     viewMenuAccount: function(e){
         $JSView.dataView({
-            'title': 'Templates'
+            'title': ''
         },e)
     },
     viewMenuC: function(e){
@@ -18,6 +18,11 @@ $JSView.controller = {
     viewMenuD: function(e){
         $JSView.dataView({
             'title': 'Examples initReload'
+        },e)
+    },
+    viewGuess: function(e) {
+        $JSView.dataView({
+
         },e)
     },
     viewGeneral: function(e){
