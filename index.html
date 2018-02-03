@@ -25,7 +25,7 @@
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; " />
     
@@ -39,15 +39,15 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/purecss.css" />
-    <link rel="stylesheet" type="text/css" href="css/iconos_gap.css" />
+    <link rel="stylesheet" type="text/css" href="css/iconos_gap.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/jsview.css" />    
     <title></title>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/plugin/fastclick.js"></script>
-    <script type="text/javascript" src="js/plugin/xui-2.3.2.min.js"></script>
-    <script type="text/javascript" src="js/plugin/jsview.js"></script>    
+    <!-- <script type="text/javascript" src="js/plugin/fastclick.js"></script>
+    <script type="text/javascript" src="js/plugin/xui-2.3.2.min.js"></script> -->
+    <script type="text/javascript" src="js/jsview.js"></script>    
     <script type="text/javascript" src="js/plugin/SHA512.js"></script>
     <script type="text/javascript" src="js/usrcontrol/wizard.js"></script>
     <script type="text/javascript" src="js/usrcontrol/datagrid.js"></script>
@@ -58,7 +58,7 @@
     <script type="text/javascript" src="js/model/operationModel.js"></script>
     <script type="text/javascript" src="js/model/catalogosModel.js"></script>
 
-    <script type="text/javascript" src="js/controller/viewController.js"></script>
+    <script type="text/javascript" src="js/viewController.js"></script>
     <script type="text/javascript" src="js/controller/AppController.js"></script>
     <script type="text/javascript" src="js/controller/loginController.js"></script>
     <script type="text/javascript" src="js/controller/inicioController.js"></script>
@@ -75,39 +75,10 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/CAECommon.js"></script>
     <script type="text/javascript">
-        app.initialize();
+        //app.initialize();
     </script>
+    <title>JSView</title>
 </head>
 
-<body>
-
-<!-- <div id="div_login"></div>
-
-<ul id="menu" class="topnav hidden">
-  <li><a id="lnkNav" href="#home">- Inicio</a></li>
-  <li class="optMenu"><a id="lnk_inicio" class="active" href="#inicio">Inicio</a></li>
-  <li class="optMenu"><a id="lnk_desord" href="#desord">Descargar &Oacute;rdenes</a></li>
-  <li class="optMenu"><a id="lnk_regpas" href="#regpas">Capturar fotos y pasos</a></li>
-  <li class="optMenu"><a id="lnk_capmaq" href="#capmaq">Capturar maquila</a></li>  
-  <li class="optMenu"><a id="lnk_desmaq" href="#desmaq">Subir Maquila</a></li>  
-  <li class="optMenu"><a id="lnk_config" href="#config">Configuraci&oacute;n</a></li>  
-  <li class="icon">
-    <a id="lnkMenu" href="#" style="font-size:15px;"><span class="sprite Menu icon"></span></a>
-  </li>
-</ul>
-
-<div class="wrapper" style="padding-left:16px">
-    <div id="divLoading" class="loading center hidden"></div>
-    <div class="hidden" id="div_inicio"></div>
-    <div class="hidden pure-form" id="div_desord"></div>
-    <div class="hidden pure-form" id="div_regpas"></div>
-    <div class="hidden pure-form" id="div_capmaq"></div>
-    <div class="hidden pure-form" id="div_desmaq"></div>    
-    <div class="hidden pure-form" id="div_config"></div>
-    <div class="push"></div>
-</div>
-<footer id="footer_page" class="footer">
-</footer> -->
-
-</body>
+<body></body>
 </html>
