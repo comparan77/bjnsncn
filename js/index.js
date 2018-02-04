@@ -128,29 +128,6 @@ window.addEventListener('load', function() {
             template: 'views/menuLeft.html',
             controller: 'menu'
         },
-        viewMenuA: {
-            url: '/viewMenuA',
-            template: 'views/viewMenuA.html',
-            controller: 'viewMenuA'
-        },
-        viewMenuB: {
-            url: '/viewMenuB',
-            template: 'views/viewMenuB.html',
-            controller: 'viewMenuB'
-        },
-        viewMenuC: {
-            url: '/viewMenuC',
-            template: 'views/viewMenuC.html',
-            controller: 'viewMenuC'
-        },
-        viewMenuD: {
-            url: '/viewMenuD',
-            template: 'views/viewMenuD.html',
-            controller: 'viewMenuD'
-        }
-    });
-
-    $JSView.declareView({ 
         viewA: {
             url: '/viewA',
             template: 'views/viewA.html',
@@ -178,6 +155,6 @@ window.addEventListener('load', function() {
     });
      
     /*Asign view start*/
-    $JSView.initView('viewMenuA');
+    $JSView.initView('viewA');
  
 }, false);
