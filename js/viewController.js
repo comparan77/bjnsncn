@@ -13,8 +13,12 @@ $JSView.controller = {
 	},
 	viewGuess: function(e) {
 		$JSView.dataView({
-			'title': 'Bienvenido'
+			'title': 'Bienvenid@'
 		},e)
+		$JSView.initSlide('#slide', {
+            responsive: true,
+            indicators: true
+        });
 	},
 	menu: function(e){
 		$JSView.dataView({},e)

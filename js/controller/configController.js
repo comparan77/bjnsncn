@@ -5,13 +5,13 @@ var ConfigController = function() {
     var wzrd_config;
 
     function initControles () {
-        wzrd_config = new Wizard({
-            content: 'wzrd_config',
-            maxStep: 3
-        });
-        wzrd_config.open();
-        wzrd_config.setStepValid(1);
-        wzrd_config.enabledBtnNext();
+        // wzrd_config = new Wizard({
+        //     content: 'wzrd_config',
+        //     maxStep: 3
+        // });
+        // wzrd_config.open();
+        // wzrd_config.setStepValid(1);
+        // wzrd_config.enabledBtnNext();
         
         reg_datos_per();    
 
@@ -47,8 +47,8 @@ var ConfigController = function() {
                 }).length == arrTxtForValidate.length;    
                 
                 if(isValidNextStep) {
-                    wzrd_config.setStepValid(2);
-                    wzrd_config.enabledBtnNext();
+                    // wzrd_config.setStepValid(2);
+                    // wzrd_config.enabledBtnNext();
                 }
                 else
                     console.log('invalido');

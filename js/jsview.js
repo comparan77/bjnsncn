@@ -603,6 +603,7 @@ FastClick.prototype.needsFocus = function(target) {
         case 'image':
         case 'radio':
         case 'submit':
+        case 'date':
             return false;
         }
 
