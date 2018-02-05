@@ -31,7 +31,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("backbutton", onBackKeyDown, false);
+        document.addEventListener('backbutton', this.onBackKeyDown, false);
     },
     // deviceready Event Handler
     //
@@ -63,12 +63,11 @@ var app = {
         } catch (error) {
             alert(error.message);
         }
+    },
+    onBackKeyDown: function() {
+        Common.notificationConfirm("Confirma que desea salir de la app", "Exit", ['Cancelar','Salir'], salir);
     }
 };
-
-function onBackKeyDown() {
-    Common.notificationConfirm("Confirma que desea salir de la app", "Exit", ['Cancelar','Salir'], salir);
-}
 
 function salir(btnIdx) {
     switch (btnIdx) {
