@@ -46,8 +46,10 @@ var ConfigController = function() {
                     return obj.valid == true;
                 }).length == arrTxtForValidate.length;    
                 
-                if(isValidNextStep)
-                    console.log('valido');
+                if(isValidNextStep) {
+                    wzrd_config.setStepValid(2);
+                    wzrd_config.enabledBtnNext();
+                }
                 else
                     console.log('invalido');
             });

@@ -58,7 +58,7 @@ $JSView = {
         }
     },
     initView: function(e){
-		console.log('initView -> '+e);
+		//console.log('initView -> '+e);
         //Assign actual view to global var
         JSVActualView = e;
         //Put actual view into camera :)
@@ -74,15 +74,15 @@ $JSView = {
 
 //        console.group('dataView obj -> ' + obj);
 //        console.time('dataView');
-        console.log('dataView e -> ' + e);
-        console.log('dataView JSVContainersViews[e] -> ' + JSVContainersViews[e]);
+        //console.log('dataView e -> ' + e);
+        //console.log('dataView JSVContainersViews[e] -> ' + JSVContainersViews[e]);
         
         var contentView = JSVContainersViews[e];
         for (var x in obj) {
-            console.log(x);
-            console.log(obj[x]);
+            //console.log(x);
+            //console.log(obj[x]);
             if(!obj[x]) obj[x]='';
-            contentView = contentView.replace(new RegExp(x, 'g'), obj[x]);
+            contentView = contentView.replace(new RegExp('{{'+x+'}}', 'g'), obj[x]);
         }
         //Remove the previous contents of the container
         $v.select('#' + e).innerHTML = ''
@@ -198,7 +198,7 @@ $JSView = {
         window.history.back();
         var windowState = window.history.state;
         setTimeout(function(){           
-           console.log("window.history.state " + windowState);
+           //console.log("window.history.state " + windowState);
            $JSView.returnTo(window.history.state);
         },10);
         
@@ -237,7 +237,7 @@ $JSView = {
             //Change the url
            /* window.history.pushState(e, 'Prueba', '/www/index.html#'+e);*/
             window.history.pushState(e, '" ' + e + ' "', 'index.html#'+ e);
-            console.log("actionMenu:: " + window.history.state);
+            //console.log("actionMenu:: " + window.history.state);
         }
         //If is the left menu enter here
         if(typeProject == 'left'){
@@ -296,7 +296,7 @@ $JSView = {
             }
             $v.select(e + ' .JSVscroller').style.width = (maxWidth * numberElement) + 'px';
         }else{
-            console.warn("Debes definir un diseño responsive o absoluto con width y eight.")   
+            //console.warn("Debes definir un diseño responsive o absoluto con width y eight.")   
         }
         /*---------------------*/
 
@@ -349,12 +349,12 @@ $JSView = {
         }
     },
     initRefresh: function(e){
-        console.log('initDoRefresh');
+        //console.log('initDoRefresh');
         $v.select('jsv-refresh').innerHTML = spinner;
     },
     initLoadMore: function(e){
         
-        console.log('initLoadMore');
+        //console.log('initLoadMore');
         // console.group('initLoadMore e -> ' + e);
         
         item = $v.select('#' + e + ' jsv-content jsv-list jsv-item');
@@ -381,7 +381,7 @@ $JSView = {
     },
     loadMore: function(obj, e){
         
-        console.log('loadMore');
+        //console.log('loadMore');
         // console.group('loadMore obj -> ' + obj);
         // console.groupEnd();
         
@@ -394,8 +394,8 @@ $JSView = {
         
         var contentView = item;
         for (var x in obj) {
-            console.log(x);
-            console.log(obj[x]);
+            //console.log(x);
+            //console.log(obj[x]);
             if(!obj[x]) obj[x]='';
             contentView = contentView.replace(new RegExp(x, 'g'), obj[x]);
         }
@@ -461,7 +461,7 @@ $v = {
 /******AJAX******/
 $JSVRequest = {
     do: function(e,url,viewInit){
-		console.log('do');
+		//console.log('do');
         var http_request = new XMLHttpRequest();
         http_request.onreadystatechange = function(url){
             if (http_request.readyState == 4) {

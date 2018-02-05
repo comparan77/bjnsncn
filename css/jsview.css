@@ -665,3 +665,7 @@ jsv-room-input button{
     -webkit-transition-duration: .25s;
     transition-duration: .25s}
 /*-----------------*/
+
+.hidden {
+    display: none;
+}

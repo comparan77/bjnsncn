@@ -11,6 +11,10 @@ body {
   width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 768px;

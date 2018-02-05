@@ -51,16 +51,16 @@ var app = {
         try {
             this.initView();
             // oIndexCtrl = new IndexController();
-            // oAppController = new AppController();
+            oAppController = new AppController();
 
-            // // Verifica la existencia de datos del usuario            
-            // usrdata = localStorage.getItem('usrdata');
-            // if(usrdata) {
-            //     menuAct = 'inicio'
-            // }
-            // else {
-            //     menuAct = 'config'
-            // }
+            // Verifica la existencia de datos del usuario            
+            usrdata = localStorage.getItem('usrdata');
+            if(usrdata) {
+                menuAct = 'inicio';
+            }
+            else {
+                oAppController.Create('config');
+            }
             // // oIndexCtrl.InitMenu();
         } catch (err) {
             console.log(err.message);
@@ -91,7 +91,15 @@ var app = {
                 controller: 'viewC'
             }
         });
-         
+        
+        $JSView.declareView({ 
+            viewGuess: {
+                url: '/viewGuess',
+                template: 'views/viewGuess.html',
+                controller: 'viewGuess'
+            }
+        });
+
         /*Declare modal*/
         $JSView.declareModal({
             modalA: {
@@ -102,7 +110,7 @@ var app = {
         });
          
         /*Asign view start*/
-        $JSView.initView('viewA');
+        $JSView.initView('viewGuess');
     },
     onBackKeyDown: function() {
         Common.notificationConfirm("Confirma que desea salir de la app", "Exit", ['Cancelar','Salir'], salir);
@@ -114,7 +122,6 @@ function salir(btnIdx) {
         case 2:
             navigator.app.exitApp();    
             break;
-    
         default:
             break;
     }
