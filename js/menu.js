@@ -16,7 +16,6 @@ var Menu = function() {
 				menuSel = String(x$(this).attr('id')).split("_")[1];
 				if(menuAct != menuSel) 
 				{
-					console.log(menuAct);
 					x$('#div_' + menuAct).addClass('hidden');
 					x$('#div_' + menuAct).html('');
 					removeActive(menuSel);
