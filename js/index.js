@@ -51,14 +51,14 @@ var app = {
             oIndexCtrl = new IndexController();
             oAppController = new AppController();
 
-            // Verifica la existencia de datos del usuario            
-            usrdata = localStorage.getItem('usrdata');
-            if(usrdata) {
-                menuAct = 'inicio'
-            }
-            else {
-                menuAct = 'config'
-            }
+            // // Verifica la existencia de datos del usuario            
+            // usrdata = localStorage.getItem('usrdata');
+            // if(usrdata) {
+            //     menuAct = 'inicio'
+            // }
+            // else {
+            //     menuAct = 'config'
+            // }
             oIndexCtrl.InitMenu();
         } catch (error) {
             alert(error.message);

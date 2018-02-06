@@ -41,12 +41,30 @@ body {
   letter-spacing: -0.02em;
 }
 
+.topMenu {
+  top: 0;
+  padding: 1em;
+  height: 5%;
+  background-color: #333;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
+}
+
+#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 #lnkNav {
@@ -260,12 +278,14 @@ text-transform: uppercase; }
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
+  padding: 1em;
+  margin-top: 5%;
+  padding-top: 6%;
 }
 .footer,
 .push {
   height: 50px;
 }
-
 
 /*side nav*/
 .sidenav {
@@ -275,23 +295,26 @@ text-transform: uppercase; }
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #fff;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  border-right-color: #333;
+  border-right-width: 1px;
+  border-right-style: solid;
 }
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 17px;
   color: #818181;
   display: block;
   transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #3b8bba;
 }
 
 .sidenav .closebtn {
@@ -310,4 +333,13 @@ text-transform: uppercase; }
 @media screen and (max-height: 450px) {
 .sidenav {padding-top: 15px;}
 .sidenav a {font-size: 18px;}
+}
+
+#topSideNav {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #333;
+  width: 100%;
+  height: 60px;
 }
