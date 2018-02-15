@@ -1,8 +1,8 @@
 //**Usuario */
-var BeanUsrData = function(persona, direccion, urlHandler) {
+var BeanUsrData = function(persona, direccion) {
     this.Persona = persona;
     this.Direccion = direccion;
-    this.UrlHandler = urlHandler;
+    this.UrlHandler;
 };
 
 var BeanPersona = function(nombre, paterno, materno) {
@@ -12,8 +12,9 @@ var BeanPersona = function(nombre, paterno, materno) {
     this.Cumpleanio;
 }
 
-var BeanDireccion = function() {
-    this.Calle;
-    this.NoInt;
-    this.NoExt;
+var BeanDireccion = function(cp, estado, municipio, callenum) {
+    this.CP = cp;
+    this.Estado = estado;
+    this.Municipio = municipio;
+    this.CalleNum = callenum;
 }
