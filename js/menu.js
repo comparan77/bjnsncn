@@ -6,7 +6,7 @@ var Menu = function() {
 	
 	function init() {
 		mySidenav = document.getElementById('mySidenav');
-		oAppController.Create(menuAct);
+		//oAppController.Create(menuAct);
 		x$('#div_' + menuAct).removeClass('hidden');
 		
 		initControls();	

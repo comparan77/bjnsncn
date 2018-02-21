@@ -2,7 +2,11 @@ var Inicio = function() {
     this.Init = init;
 
     function initControles () {
-        //x$('#spn_usuario').html(oUsuario.Nombre);
+        OperationModel.loadMenu(function(data){
+            console.log(JSON.stringify(data.hoja));
+        }, function(err) {
+            console.log(err.message);
+        });
     }
 
     function init() {
