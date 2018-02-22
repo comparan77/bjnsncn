@@ -5,15 +5,62 @@
     <div class="pure-g pure-form">
         <div class="pure-u-1-2">
             <span class="selected">Men&uacute; de la semana</span>
-            <span>25</span>
+            <span id="spn_week_number">25</span>
         </div>
         <div class="pure-u-1-2">
-            <span style="float:right;">48:00:15</span>
+            <span id="spn_tiempo_limite" style="float:right;">Actualizando...</span>
         </div>
     </div>
 </div>
 <hr id="hrMenu">
 
-<div id="div_menu">
+<div id="grd_desayuno" class="grdMenu">
+    <div id="columns">
+        <div type="Boundfield" datafield="Platillo" headertext="Desayunos"></div>
+        <div type="Boundfield" datafield="Precio" headertext="Precio"></div>
+        <div type="Templatefield" datafield="" headertext="" style="display: none;">
+            <input type="number" onblur="Inicio.checkTotal(this);" style="width: 100%; padding: 5px 0; text-indent: 5px; text-align: center;">
+        </div>
+    </div>
+</div>
+
+<div id="grd_comida" class="grdMenu">
+    <div id="columns">
+        <div type="Boundfield" datafield="Platillo" headertext="Comidas"></div>
+        <div type="Boundfield" datafield="Precio" headertext="Precio"></div>
+        <div type="Templatefield" datafield="" headertext="" style="display: none;">
+            <input type="number" onblur="Inicio.checkTotal(this);" style="width: 100%; padding: 5px 0; text-indent: 5px; text-align: center;">
+        </div>
+    </div>
+</div>
+
+<div id="grd_postre" class="grdMenu">
+    <div id="columns">
+        <div type="Boundfield" datafield="Platillo" headertext="Postres"></div>
+        <div type="Boundfield" datafield="Precio" headertext="Precio"></div>
+        <div type="Templatefield" datafield="" headertext="" style="display: none;">
+            <input type="number" onblur="Inicio.checkTotal(this);" style="width: 100%; padding: 5px 0; text-indent: 5px; text-align: center;">
+        </div>
+    </div>
+</div>
+
+<div class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label style="text-align: right;">Subtotal:&nbsp;<span id="spn_subtotal"></span></label>
+        </div>
+
+        <div class="pure-control-group">
+            <label style="text-align: right;">Env&iacute;o:</label>
+        </div>
+
+        <div class="pure-control-group">
+            <label style="text-align: right;">Total:&nbsp;<span id="spn_total"></span></label>
+        </div>
+
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Siguiente</button>
+        </div>
+    </fieldset>
     
 </div>

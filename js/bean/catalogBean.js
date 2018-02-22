@@ -18,3 +18,9 @@ var BeanDireccion = function(cp, estado, municipio, callenum) {
     this.Municipio = municipio;
     this.CalleNum = callenum;
 }
+
+var BeanPlatillo = function(categoria, platillo, precio) {
+    this.Categoria = categoria;
+    this.Platillo = platillo;
+    this.Precio = precio;
+}

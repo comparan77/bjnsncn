@@ -128,7 +128,16 @@
             for(cx = 0; cx < this.arrMapCols.length; cx ++) {
                 var v_map_col = this.arrMapCols[cx];
                 var cellData = row.insertCell(v_map_col.Idx);
-                cellData.innerHTML = objJson[v_map_col.DataField];
+                switch (v_map_col.Type) {
+                    case 'Boundfield':
+                        cellData.innerHTML = objJson[v_map_col.DataField];        
+                        break;
+                    case 'Templatefield':
+                        cellData.innerHTML = v_map_col.InnerTemplate;
+                        break;
+                    default:
+                        break;
+                }
             }
             this.numRow++;
         }
@@ -163,7 +172,7 @@
             if(div.attributes.id != undefined)
             switch(div.attributes.id.value) {
                 case 'columns':
-                    var columns = document.getElementById('columns').children;
+                    var columns = document.getElementById(this.options.Id).children[0].children;
                     var row = this.thead.insertRow(this.numRow);
                     for(var col = 0; col < columns.length; col ++) {
                         var column = columns[col];
@@ -174,9 +183,14 @@
                         var oMapCol = new MapCol(
                             col, 
                             column.attributes.getNamedItem('type').value,
-                            column.attributes.getNamedItem('datafield').value, 
+                            column.attributes.getNamedItem('datafield').value ? column.attributes.getNamedItem('datafield').value : '', 
                             column.hasAttribute('commandName') ? column.attributes.getNamedItem('commandName').value: null
                         );
+
+                        if(oMapCol.Type == 'Templatefield') {
+                            oMapCol.InnerTemplate = column.innerHTML;
+                            column.innerHTML = '';
+                        }
 
                         this.arrMapCols.push(oMapCol);
                         cellTbl++;
@@ -204,6 +218,7 @@
         this.Type = type;
         this.DataField = datafield;
         this.CommandName = commandName;
+        this.InnerTemplate;
     }
 
     // Utility method to extend defaults with user options

@@ -287,6 +287,23 @@ text-transform: uppercase; }
   height: 50px;
 }
 
+
+@media only screen and (max-width: 370px) {
+  body { 
+     font-size: .7em; 
+  }
+  .wrapper {
+    min-height: 100%;
+  
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
+    padding: 1em;
+    margin-top: 9%;
+    padding-top: 10%;
+  }
+}
+
 /*side nav*/
 .sidenav {
   height: 100%;

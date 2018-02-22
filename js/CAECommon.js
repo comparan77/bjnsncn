@@ -307,3 +307,40 @@ Common.checkConnection = function() {
     }
     return result;
 }
+
+//**Format strings */
+Common.getCurrencyFormat = function(dato, decimals) {
+    var num_decimal = typeof decimals !== 'undefined' ? decimals : 2;
+    var isNegative;
+    if (dato < 0)
+        isNegative = '-$';
+    else
+        isNegative = '$';
+    dato = Math.abs(dato);
+    return isNegative + dato.toFixed(num_decimal).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+}
+
+Common.getOnlyDecimal = function(dato) {
+    var isNegative;
+    isNegative = dato.indexOf('-');
+    if (isNegative >= 0)
+        isNegative = -1;
+    else
+        isNegative = 1;
+    return dato.replace(/[^0-9.]/g, '') * isNegative;
+}
+
+//**Date functions */
+Common.getWeekNumber = function(d) {
+    // Copy date so don't modify original
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    // Set to nearest Thursday: current date + 4 - current day number
+    // Make Sunday's day number 7
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+    // Get first day of year
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    // Calculate full weeks to nearest Thursday
+    var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+    // Return array of year and week number
+    return [d.getUTCFullYear(), weekNo];
+}
