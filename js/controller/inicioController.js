@@ -4,11 +4,19 @@ var Inicio = function() {
     var arrDesayuno = [];
     var arrComida = [];
     var arrPostre = [];
+    var sig_1;
+    var ant_1;
 
     function initControles () {
         try {
 
             getLimitePedido();
+
+            sig_1 = document.getElementById('sig_1');
+            ant_1 = document.getElementById('ant_1');
+
+            sig_1_click();
+            ant_1_click();
 
             grd_desayuno = new DataGrid({
                 Id: 'grd_desayuno',
@@ -125,6 +133,20 @@ var Inicio = function() {
         if (valor < 10)
             valor = '0' + String(valor);
         return valor;            
+    }
+
+    function sig_1_click() {
+        sig_1.addEventListener('click', function() {
+            x$('#step_1').addClass('hidden');
+            x$('#step_2').removeClass('hidden');
+        });
+    }
+
+    function ant_1_click() {
+        ant_1.addEventListener('click', function() {
+            x$('#step_2').addClass('hidden');
+            x$('#step_1').removeClass('hidden');
+        });
     }
 }
 
